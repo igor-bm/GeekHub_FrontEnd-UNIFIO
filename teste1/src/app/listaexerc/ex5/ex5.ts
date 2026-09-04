@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './ex5.html',
   styleUrl: './ex5.scss',
 })
-export class Ex5 {}
+export class Ex5 {
+  curtidas = 0;
+
+  curtir(){
+    this.curtidas ++;
+  }
+}

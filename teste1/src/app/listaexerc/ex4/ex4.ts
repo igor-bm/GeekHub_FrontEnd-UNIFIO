@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './ex4.html',
   styleUrl: './ex4.scss',
 })
-export class Ex4 {}
+export class Ex4 {
+  formularioValido: Boolean = false;
+
+  resultado(){
+    this.formularioValido = true;
+  }
+}

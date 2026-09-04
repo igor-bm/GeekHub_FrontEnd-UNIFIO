@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'produto',
     loadChildren: () => import('./produto/produto-module').then(m => m.ProdutoModule)
   },
+
+  {
+    path: 'listaexerc',
+    loadChildren: () => import('./listaexerc/listaexerc-module').then(m => m.ListaexercModule)
+  }
 ];
 
 @NgModule({

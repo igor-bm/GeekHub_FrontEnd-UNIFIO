@@ -6,4 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: './ex6.html',
   styleUrl: './ex6.scss',
 })
-export class Ex6 {}
+export class Ex6 {
+  contador = 0;
+
+  soma(){
+    this.contador++;
+  }
+
+  subtrai(){
+    if (this.contador > 0){
+      this.contador--;
+    }
+  }
+}

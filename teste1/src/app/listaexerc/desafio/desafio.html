@@ -1,1 +1,31 @@
-<p>desafio works!</p>
+<div>
+  <label>Nome do Aluno: </label>
+  <input type="text" [(ngModel)]="nomeAluno" placeholder="Digite seu nome" />
+</div>
+
+<br />
+
+<div>
+  <label>Disciplinas: </label>
+  <button (click)="diminuir()" [disabled]="quantidadeDisciplinas <= 1">-</button>
+  <span> {{ quantidadeDisciplinas }} </span>
+  <button (click)="aumentar()">+</button>
+</div>
+
+<br />
+
+<button 
+  (click)="realizarMatricula()" 
+  [disabled]="!nomeAluno.trim()">
+  Realizar Matrícula
+</button>
+
+<hr />
+
+<h3>Resumo em Tempo Real</h3>
+<p>Aluno: {{ nomeAluno }}</p>
+<p>Quantidade de Disciplinas: {{ quantidadeDisciplinas }}</p>
+
+<p *ngIf="mensagemMatricula">
+  <strong>{{ mensagemMatricula }}</strong>
+</p>

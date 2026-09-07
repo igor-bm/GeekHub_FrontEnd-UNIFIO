@@ -1,1 +1,21 @@
-<p>ex11 works!</p>
+<div>
+  <h3>{{ nomeProduto }}</h3>
+  <p>Preço: R$ {{ preco }},00</p>
+  
+  <p>
+    Quantidade: {{ quantidade }} 
+    <button (click)="diminuir()" [disabled]="quantidade <= 1">-</button>
+    <button (click)="aumentar()">+</button>
+  </p>
+
+  <p>Total: R$ {{ total }},00</p>
+
+  <button (click)="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+
+  <hr />
+
+  <!-- Exibe a mensagem de confirmação -->
+  <p *ngIf="mensagemCarrinho">
+    <strong>{{ mensagemCarrinho }}</strong>
+  </p>
+</div>

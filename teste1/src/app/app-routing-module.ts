@@ -15,7 +15,13 @@ const routes: Routes = [
   {
     path: 'listaexerc',
     loadChildren: () => import('./listaexerc/listaexerc-module').then(m => m.ListaexercModule)
+  },
+  
+  {
+    path: 'listaexercicio2',
+    loadChildren: () => import('./listaexercicio2/listaexercicio2-module').then(m => m.Listaexercicio2Module)
   }
+
 ];
 
 @NgModule({

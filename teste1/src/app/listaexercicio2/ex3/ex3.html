@@ -1,0 +1,14 @@
+<button (click)="soma()">+</button>
+<button (click)="subtrai()">-</button>
+
+<p>Idade: {{ idade }}</p>
+
+@if (idade < 12) {
+    <p>Você é uma criança</p>
+} @else if (idade >= 12 && idade <= 17) {
+    <p>Você é um adolescente</p>
+} @else if (idade >= 18 && idade <= 59) {
+    <p>Você é um adulto</p>
+} @else {
+    <p>Você é um idoso</p>
+}

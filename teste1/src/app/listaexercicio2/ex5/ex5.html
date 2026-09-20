@@ -1,1 +1,15 @@
-<p>ex5 works!</p>
+<ul>
+  @for (nome of nomes; track $index) {
+    <li>
+      {{ $index + 1 }} - {{ nome }}
+
+      @if ($first) {
+        <span>Primeiro da lista</span>
+      }
+
+      @if ($last) {
+        <span>Último da lista</span>
+      }
+    </li>
+  }
+</ul>

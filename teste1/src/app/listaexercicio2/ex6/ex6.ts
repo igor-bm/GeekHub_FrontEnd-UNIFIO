@@ -6,4 +6,27 @@ import { Component } from '@angular/core';
   templateUrl: './ex6.html',
   styleUrl: './ex6.scss',
 })
-export class Ex6 {}
+export class Ex6 {
+  nomesIniciais = [
+    'Igor',
+    'João',
+    'Maria',
+    'Pedro',
+    'Ana'
+  ];
+
+  nomes = [...this.nomesIniciais];
+
+  removerUltimo() {
+    this.nomes.pop();
+  }
+
+  limparLista() {
+    this.nomes = [];
+  }
+
+
+  restaurarLista() {
+    this.nomes = [...this.nomesIniciais];
+  }
+}

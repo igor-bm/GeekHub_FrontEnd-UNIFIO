@@ -1,0 +1,20 @@
+<ul>
+  @for (
+    disciplina of disciplinas; 
+    track disciplina; 
+    let i = $index; 
+    let par = $even; 
+    let impar = $odd; 
+    let primeira = $first; 
+    let ultima = $last
+  ) {
+    <li [ngClass]="{
+      'linha-par': par,
+      'linha-impar': impar,
+      'primeira-disciplina': primeira,
+      'ultima-disciplina': ultima
+    }">
+      {{ i + 1 }} - {{ disciplina }}
+    </li>
+  }
+</ul>

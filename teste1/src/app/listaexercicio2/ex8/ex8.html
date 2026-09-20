@@ -1,0 +1,24 @@
+<h1>Lista de Produtos</h1>
+
+<table border="1" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Posição</th>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Quantidade</th>
+      <th>Total em Estoque</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (produto of produtos; track produto.id; let i = $index) {
+      <tr>
+        <td>{{ i + 1 }}º</td>
+        <td>{{ produto.nome }}</td>
+        <td>R$ {{ produto.preco.toFixed(2) }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td>R$ {{ (produto.preco * produto.quantidade).toFixed(2) }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

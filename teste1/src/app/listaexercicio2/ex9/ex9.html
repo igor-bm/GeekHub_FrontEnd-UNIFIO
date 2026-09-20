@@ -1,0 +1,32 @@
+<h1>Classificação do Estoque</h1>
+
+<table border="1" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Situação do Estoque</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (produto of produtos; track produto.id) {
+      <tr>
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td [ngClass]="{
+          'sem-estoque': produto.quantidade === 0,
+          'estoque-baixo': produto.quantidade >= 1 && produto.quantidade <= 5,
+          'estoque-disponivel': produto.quantidade > 5
+        }">
+          @if (produto.quantidade === 0) {
+            Sem estoque
+          } @else if (produto.quantidade <= 5) {
+            Estoque baixo
+          } @else {
+            Estoque disponível
+          }
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

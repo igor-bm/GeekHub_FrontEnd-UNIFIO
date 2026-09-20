@@ -1,0 +1,25 @@
+<h1>Filtro de Produtos Disponíveis</h1>
+
+<label style="margin-bottom: 15px; display: block; cursor: pointer;">
+  <input type="checkbox" [(ngModel)]="somenteDisponiveis">
+  Exibir somente produtos com estoque
+</label>
+
+<table border="1" style="border-collapse: collapse; width: 100%; max-width: 600px;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Quantidade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let produto of produtos">
+      <tr *ngIf="!somenteDisponiveis || produto.quantidade > 0">
+        <td>{{ produto.nome }}</td>
+        <td>R$ {{ produto.preco.toFixed(2) }}</td>
+        <td>{{ produto.quantidade }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

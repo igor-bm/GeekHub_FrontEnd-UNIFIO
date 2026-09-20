@@ -1,0 +1,50 @@
+<h1>Cadastro Simplificado de Produtos</h1>
+
+<div style="margin-bottom: 20px;">
+  <div>
+    <label>Nome do Produto:</label><br>
+    <input type="text" [(ngModel)]="novoNome" placeholder="Ex: Monitor">
+  </div>
+
+  <div style="margin-top: 10px;">
+    <label>Quantidade:</label><br>
+    <input type="number" [(ngModel)]="novaQuantidade" placeholder="Ex: 5">
+  </div>
+
+  <button (click)="cadastrarProduto()" style="margin-top: 10px;">
+    Cadastrar
+  </button>
+
+  @if (mensagemErro) {
+    <p style="color: red; margin-top: 8px;">{{ mensagemErro }}</p>
+  }
+</div>
+
+<hr>
+
+<h2>Produtos Cadastrados</h2>
+
+@if (produtos.length > 0) {
+  <table border="1" style="border-collapse: collapse; width: 100%; max-width: 500px;">
+    <thead>
+      <tr style="background-color: #f2f2f2;">
+        <th>Nome</th>
+        <th>Quantidade</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (produto of produtos; track produto.id; let i = $index) {
+        <tr>
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.quantidade }}</td>
+          <td>
+            <button (click)="excluirProduto(i)">Excluir</button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <p>Nenhum produto cadastrado.</p>
+}

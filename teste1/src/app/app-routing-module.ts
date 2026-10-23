@@ -20,6 +20,11 @@ const routes: Routes = [
   {
     path: 'listaexercicio2',
     loadChildren: () => import('./listaexercicio2/listaexercicio2-module').then(m => m.Listaexercicio2Module)
+  },
+
+  {
+    path: 'material',
+    loadChildren: () => import('./material/material-module').then(m => m.MaterialModule)
   }
 
 ];
